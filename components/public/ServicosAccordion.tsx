@@ -28,10 +28,10 @@ export default function ServicosAccordion({ services }: ServicosAccordionProps) 
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-16">
           <p className="font-body text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
-            O que fazemos
+            Serviços
           </p>
           <h2 className="font-display font-light text-4xl md:text-5xl text-foreground leading-tight">
-            Serviços
+            Cada detalhe,<br />uma intenção
           </h2>
         </div>
 

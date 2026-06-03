@@ -6,7 +6,7 @@ export default function Footer() {
           Carolina Dotti
         </p>
         <p className="font-body text-xs text-[hsl(30_33%_96%/0.4)] tracking-wider">
-          © {new Date().getFullYear()} Espaço Carolina Dotti. Todos os direitos reservados.
+          © {new Date().getFullYear()} — Todos os direitos reservados
         </p>
       </div>
     </footer>

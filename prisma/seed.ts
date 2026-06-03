@@ -14,58 +14,58 @@ const SERVICES = [
   {
     order: 1,
     title: "Mechas",
-    subtitle: "Luz e Dimensão",
+    subtitle: "Luz e dimensão",
     description:
-      "Técnicas exclusivas de mechas que trazem luz natural e dimensão aos fios, criando movimento e luminosidade personalizados para cada tipo de cabelo.",
-    imageUrl: "/images/service-mechas.jpg",
+      "Mechas que dialogam com o tom natural dos fios, criando profundidade e movimento. Cada aplicação é pensada como uma composição de luz, respeitando a personalidade e o estilo de vida de quem as carrega.",
+    imageUrl: "",
   },
   {
     order: 2,
     title: "Penteados",
-    subtitle: "Gestos de Elegância",
+    subtitle: "Gestos de elegância",
     description:
-      "Penteados artesanais que equilibram sofisticação e personalidade. Da noiva ao evento casual, cada criação é única e pensada para realçar sua beleza.",
-    imageUrl: "/images/service-penteados.jpg",
+      "Penteados que capturam a essência de um momento — seja uma celebração, um encontro especial ou simplesmente a vontade de se sentir extraordinária. Cada fio é posicionado com intenção e delicadeza.",
+    imageUrl: "",
   },
   {
     order: 3,
     title: "Maquiagem",
-    subtitle: "Pele como Tela",
+    subtitle: "Pele como tela",
     description:
-      "Maquiagem artística e profissional que valoriza seus traços naturais. Técnicas modernas para realçar sua beleza com leveza e elegância.",
-    imageUrl: "/images/service-maquiagem.jpg",
+      "Uma maquiagem que realça sem mascarar, que ilumina sem ofuscar. Trabalhamos com texturas leves e tons que conversam com sua pele natural, criando uma beleza que parece ter sempre estado ali.",
+    imageUrl: "",
   },
   {
     order: 4,
     title: "Coloração",
-    subtitle: "A Cor Certa",
+    subtitle: "A cor certa",
     description:
-      "Coloração precisa e harmoniosa que respeita a saúde dos fios. Do tom natural ao ousado, encontramos juntas a cor que revela sua essência.",
-    imageUrl: "/images/service-coloracao.jpg",
+      "Coloração personalizada que respeita a integridade dos fios enquanto revela nuances inesperadas. Cada tom é escolhido em diálogo com a pele, os olhos e a luz natural do ambiente onde você vive.",
+    imageUrl: "",
   },
   {
     order: 5,
     title: "Corte",
-    subtitle: "Forma e Movimento",
+    subtitle: "Forma e movimento",
     description:
-      "Cortes que combinam técnica e sensibilidade, criando formas que valorizam seu rosto e se adaptam ao seu estilo de vida com leveza.",
-    imageUrl: "/images/service-corte.jpg",
+      "Um corte que entende a geometria natural dos seus fios e a arquitetura do seu rosto. Menos sobre tendências passageiras, mais sobre encontrar a forma que faz você se reconhecer ao espelho.",
+    imageUrl: "",
   },
   {
     order: 6,
     title: "Tratamentos",
-    subtitle: "Saúde e Vitalidade",
+    subtitle: "Hidratação, nutrição e reconstrução",
     description:
-      "Hidratação, nutrição e reconstrução capilar com produtos selecionados. Devolvemos a saúde e o brilho que seus fios merecem.",
-    imageUrl: "/images/service-tratamentos.jpg",
+      "Protocolos cuidadosamente selecionados para devolver aos fios sua vitalidade natural. Hidratação profunda, nutrição com óleos nobres e reconstrução da fibra capilar — cada etapa é um ritual de cuidado.",
+    imageUrl: "",
   },
   {
     order: 7,
     title: "Escova",
-    subtitle: "Fluidez Natural",
+    subtitle: "Fluidez natural",
     description:
-      "Escova modeladora que traz fluidez, brilho e movimento natural aos fios. O acabamento perfeito para qualquer ocasião.",
-    imageUrl: "/images/service-escova.jpg",
+      "Uma escova que valoriza o movimento dos fios com naturalidade e leveza. O resultado é um cabelo que parece cuidado sem esforço, com brilho e caimento perfeitos.",
+    imageUrl: "",
   },
 ]
 
@@ -122,7 +122,16 @@ async function main() {
       where: { title: service.title },
     })
 
-    if (!existing) {
+    if (existing) {
+      await prisma.service.update({
+        where: { id: existing.id },
+        data: {
+          subtitle: service.subtitle,
+          description: service.description,
+          order: service.order,
+        },
+      })
+    } else {
       await prisma.service.create({ data: service })
     }
   }

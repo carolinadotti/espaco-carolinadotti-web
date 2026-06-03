@@ -27,20 +27,17 @@ export default function Hero({ imageUrl }: HeroProps) {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 animate-fade-in">
-        <p className="font-body text-xs tracking-[0.4em] uppercase text-[hsl(30_33%_96%/0.8)] mb-6">
-          Espaço de Beleza
-        </p>
         <h1 className="font-display font-light text-6xl md:text-8xl text-[hsl(30_33%_96%)] mb-6 leading-none">
-          Carolina Dotti
+          Carolina<br />Dotti
         </h1>
         <p className="font-display italic font-light text-xl md:text-2xl text-[hsl(30_33%_96%/0.85)] mb-10">
-          Beleza e Elegância
+          A beleza que já existe em você, revelada com elegância
         </p>
         <a
-          href="#sobre"
+          href="#contato"
           className="inline-block font-body text-xs tracking-[0.3em] uppercase px-8 py-3.5 border border-[hsl(30_33%_96%/0.6)] text-[hsl(30_33%_96%)] hover:bg-[hsl(30_33%_96%/0.15)] transition-all duration-500"
         >
-          Conheça o Espaço
+          Agendar
         </a>
       </div>
 

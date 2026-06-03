@@ -30,23 +30,19 @@ export default function Sobre({ imageUrl }: SobreProps) {
               Sobre
             </p>
             <h2 className="font-display font-light text-4xl md:text-5xl text-[hsl(20_6%_18%)] mb-8 leading-tight">
-              Um olhar que revela beleza
+              Um olhar que<br />revela beleza
             </h2>
             <div className="w-12 h-px bg-[hsl(30_35%_54%)] mb-8" />
             <p className="font-body font-light text-[hsl(20_6%_40%)] leading-relaxed mb-5">
-              Com anos de experiência e uma paixão genuína pelo que faz, Carolina
-              Dotti construiu um espaço onde cada cliente é tratada com atenção e
-              cuidado únicos.
-            </p>
-            <p className="font-body font-light text-[hsl(20_6%_40%)] leading-relaxed mb-5">
-              Especializada em coloração, mechas e penteados, Carolina acredita
-              que a beleza é uma expressão pessoal — e seu papel é ajudar cada
-              mulher a encontrar a sua.
+              Cada pessoa carrega consigo uma beleza singular, muitas vezes adormecida
+              sob a rotina do cotidiano. Meu trabalho é criar um espaço onde essa
+              beleza possa respirar e se revelar naturalmente.
             </p>
             <p className="font-body font-light text-[hsl(20_6%_40%)] leading-relaxed">
-              Em São Lourenço do Sul, o Espaço Carolina Dotti tornou-se
-              referência em beleza e elegância para quem busca sofisticação e
-              atendimento personalizado.
+              Com anos de dedicação e uma busca constante pela excelência, desenvolvi
+              uma abordagem que valoriza a individualidade de cada cliente. Não
+              transformo — revelo. Não imponho — escuto. O resultado é uma versão
+              sua que você reconhece como a mais autêntica.
             </p>
           </div>
         </div>
