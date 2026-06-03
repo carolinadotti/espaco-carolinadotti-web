@@ -10,7 +10,7 @@ export default function Hero({ imageUrl }: HeroProps) {
   return (
     <section
       id="inicio"
-      className="relative h-screen flex items-center justify-center overflow-hidden"
+      className="relative h-screen w-full overflow-hidden"
     >
       {/* Background image */}
       <div className="absolute inset-0">
@@ -22,31 +22,19 @@ export default function Hero({ imageUrl }: HeroProps) {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(20_6%_18%/0.2)] to-[hsl(20_6%_18%/0.45)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(20_6%_18%/0.2)] via-transparent to-[hsl(20_6%_18%/0.4)]" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 animate-fade-in">
-        <h1 className="font-display font-light text-6xl md:text-8xl text-[hsl(30_33%_96%)] mb-6 leading-none">
-          Carolina<br />Dotti
-        </h1>
-        <p className="font-display italic font-light text-xl md:text-2xl text-[hsl(30_33%_96%/0.85)] mb-10">
-          A beleza que já existe em você, revelada com elegância
-        </p>
-        <a
-          href="#contato"
-          className="inline-block font-body text-xs tracking-[0.3em] uppercase px-8 py-3.5 border border-[hsl(30_33%_96%/0.6)] text-[hsl(30_33%_96%)] hover:bg-[hsl(30_33%_96%/0.15)] transition-all duration-500"
-        >
-          Agendar
-        </a>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in">
-        <div className="w-px h-12 bg-[hsl(30_33%_96%/0.4)]" />
-        <p className="font-body text-[10px] tracking-widest uppercase text-[hsl(30_33%_96%/0.5)]">
-          Scroll
-        </p>
+      {/* Content — bottom-left, igual ao Lovable */}
+      <div className="relative z-10 flex flex-col justify-end h-full pb-20 md:pb-28 px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="animate-fade-in">
+          <h1 className="font-display font-light text-5xl md:text-7xl lg:text-8xl text-[hsl(30_33%_96%)] tracking-wide leading-tight">
+            Carolina<br />Dotti
+          </h1>
+          <p className="mt-6 font-body font-light text-sm md:text-base tracking-widest uppercase text-[hsl(30_33%_96%/0.8)] max-w-md">
+            A beleza que já existe em você, revelada com elegância
+          </p>
+        </div>
       </div>
     </section>
   )
