@@ -147,7 +147,7 @@ export default function LoginPage() {
                     setTurnstileToken("")
                     setError("Erro no captcha. Tente novamente.")
                   }}
-                  options={{ theme: "auto", language: "pt-BR" }}
+                  options={{ theme: "auto", language: "pt" }}
                 />
               </div>
 
