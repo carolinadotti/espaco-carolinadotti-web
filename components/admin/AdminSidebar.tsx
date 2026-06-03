@@ -10,6 +10,7 @@ import {
   Scissors,
   ExternalLink,
   Sparkles,
+  BookOpen,
 } from "lucide-react"
 import {
   Sidebar,
@@ -34,6 +35,11 @@ const navItems = [
     href: "/dashboard/services",
     label: "Serviços",
     icon: Sparkles,
+  },
+  {
+    href: "/dashboard/blog",
+    label: "Blog",
+    icon: BookOpen,
   },
   {
     href: "/dashboard/settings",

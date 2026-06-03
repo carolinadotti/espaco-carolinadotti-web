@@ -2,12 +2,10 @@ import type { Metadata } from "next"
 import { headers } from "next/headers"
 import { prisma } from "@/lib/db"
 import { getSettings } from "@/lib/settings"
-import Header from "@/components/public/Header"
 import Hero from "@/components/public/Hero"
 import Sobre from "@/components/public/Sobre"
 import Servicos from "@/components/public/Servicos"
 import Contato from "@/components/public/Contato"
-import Footer from "@/components/public/Footer"
 import { UAParser } from "ua-parser-js"
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://espacocarolinadotti.com.br"
@@ -131,7 +129,6 @@ export default async function HomePage() {
   return (
     <>
       <LocalBusinessJsonLd settings={settings} />
-      <Header />
       <main>
         <Hero imageUrl={settings.hero_image || undefined} />
         <Sobre imageUrl={settings.about_image || undefined} />
@@ -143,7 +140,6 @@ export default async function HomePage() {
           mapsUrl={settings.maps_url}
         />
       </main>
-      <Footer />
     </>
   )
 }

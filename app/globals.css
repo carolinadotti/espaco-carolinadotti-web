@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -186,4 +187,13 @@ body {
   --color-sidebar-accent-foreground: hsl(215 20% 75%);
   --color-sidebar-border: hsl(222 47% 12%);
   --color-sidebar-ring: hsl(213 94% 56%);
+}
+
+/* ── Tiptap editor placeholder ─────────────────────────────── */
+.tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: hsl(var(--muted-foreground));
+  float: left;
+  height: 0;
+  pointer-events: none;
 }

@@ -1,24 +1,40 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 
-const navLinks = [
+const ANCHOR_LINKS = [
   { href: "#inicio", label: "Início" },
   { href: "#sobre", label: "Sobre" },
   { href: "#servicos", label: "Serviços" },
   { href: "#contato", label: "Contato" },
 ]
 
-export default function Header() {
+interface HeaderProps {
+  showBlog?: boolean
+}
+
+export default function Header({ showBlog = false }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
+  const isHome = pathname === "/"
+
+  // Em páginas do blog, âncoras apontam para /#secao
+  function resolveHref(href: string) {
+    if (href.startsWith("#") && !isHome) return `/${href}`
+    return href
+  }
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const linkClass = "font-body text-xs tracking-widest uppercase text-[hsl(20_6%_40%)] hover:text-[hsl(20_6%_18%)] transition-colors duration-300"
 
   return (
     <header
@@ -29,30 +45,35 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
-        <a
-          href="#inicio"
+        <Link
+          href="/"
           className="font-display text-xl font-light tracking-[0.2em] uppercase text-[hsl(20_6%_18%)]"
         >
           Carolina Dotti
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <a
+          {ANCHOR_LINKS.map((link) => (
+            <Link
               key={link.href}
-              href={link.href}
-              className="font-body text-xs tracking-widest uppercase text-[hsl(20_6%_40%)] hover:text-[hsl(20_6%_18%)] transition-colors duration-300"
+              href={resolveHref(link.href)}
+              className={linkClass}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contato"
+          {showBlog && (
+            <Link href="/blog" className={linkClass}>
+              Blog
+            </Link>
+          )}
+          <Link
+            href={isHome ? "#contato" : "/#contato"}
             className="font-body text-xs tracking-widest uppercase px-6 py-2.5 border border-[hsl(30_35%_54%)] text-[hsl(30_35%_54%)] hover:bg-[hsl(30_35%_54%)] hover:text-[hsl(30_33%_96%)] transition-all duration-300"
           >
             Agendar
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile toggle */}
@@ -68,23 +89,32 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-[hsl(30_33%_96%/0.97)] backdrop-blur-md border-t border-[hsl(25_20%_82%)] px-6 py-6 flex flex-col gap-5">
-          {navLinks.map((link) => (
-            <a
+          {ANCHOR_LINKS.map((link) => (
+            <Link
               key={link.href}
-              href={link.href}
+              href={resolveHref(link.href)}
               onClick={() => setMobileOpen(false)}
               className="font-body text-xs tracking-widest uppercase text-[hsl(20_6%_40%)]"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contato"
+          {showBlog && (
+            <Link
+              href="/blog"
+              onClick={() => setMobileOpen(false)}
+              className="font-body text-xs tracking-widest uppercase text-[hsl(20_6%_40%)]"
+            >
+              Blog
+            </Link>
+          )}
+          <Link
+            href={isHome ? "#contato" : "/#contato"}
             onClick={() => setMobileOpen(false)}
             className="font-body text-xs tracking-widest uppercase px-6 py-2.5 border border-[hsl(30_35%_54%)] text-[hsl(30_35%_54%)] text-center"
           >
             Agendar
-          </a>
+          </Link>
         </div>
       )}
     </header>
