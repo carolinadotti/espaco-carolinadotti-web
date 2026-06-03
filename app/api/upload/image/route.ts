@@ -85,6 +85,13 @@ async function saveFile(buffer: Buffer, filename: string): Promise<string> {
     return blob.url
   }
 
+  // Fallback local apenas em desenvolvimento
+  if (process.env.NODE_ENV === "production") {
+    throw new Error(
+      "BLOB_READ_WRITE_TOKEN não configurado. Configure a variável de ambiente no painel da Vercel."
+    )
+  }
+
   const uploadsDir = path.join(process.cwd(), "public", "uploads")
   await fs.mkdir(uploadsDir, { recursive: true })
   await fs.writeFile(path.join(uploadsDir, filename), buffer)
