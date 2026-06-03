@@ -59,11 +59,13 @@ html {
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-body);
+  /* Montserrat como fonte padrão do corpo */
+  font-family: var(--font-montserrat), Montserrat, system-ui, sans-serif;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 /* ─── Utilitários tipográficos públicos ─────────────────────────── */
 .font-display {
