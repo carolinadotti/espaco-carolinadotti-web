@@ -9,6 +9,7 @@ import {
   LogOut,
   Scissors,
   ExternalLink,
+  Sparkles,
 } from "lucide-react"
 import {
   Sidebar,
@@ -28,6 +29,11 @@ const navItems = [
     href: "/dashboard",
     label: "Dashboard",
     icon: LayoutDashboard,
+  },
+  {
+    href: "/dashboard/services",
+    label: "Serviços",
+    icon: Sparkles,
   },
   {
     href: "/dashboard/settings",
