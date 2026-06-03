@@ -7,6 +7,11 @@ export interface SiteSettings {
   maps_url: string
   hero_image: string
   about_image: string
+  // SEO
+  site_title: string
+  site_description: string
+  site_keywords: string
+  og_image: string
 }
 
 const DEFAULTS: SiteSettings = {
@@ -18,6 +23,12 @@ const DEFAULTS: SiteSettings = {
     "https://www.google.com/maps/search/?api=1&query=Avenida+Marechal+Floriano+214+Barrinha+S%C3%A3o+Louren%C3%A7o+do+Sul+RS",
   hero_image: "",
   about_image: "",
+  site_title: "Carolina Dotti — Beleza e Elegância",
+  site_description:
+    "Espaço de beleza especializado em mechas, coloração, penteados, maquiagem, corte e tratamentos capilares. Atendimento personalizado em São Lourenço do Sul, RS.",
+  site_keywords:
+    "salão de beleza, mechas, coloração, penteados, maquiagem, corte de cabelo, tratamentos capilares, São Lourenço do Sul, RS",
+  og_image: "",
 }
 
 export async function getSettings(): Promise<SiteSettings> {

@@ -104,6 +104,18 @@ async function main() {
     },
     { key: "hero_image", value: "" },
     { key: "about_image", value: "" },
+    { key: "site_title", value: "Carolina Dotti — Beleza e Elegância" },
+    {
+      key: "site_description",
+      value:
+        "Espaço de beleza especializado em mechas, coloração, penteados, maquiagem, corte e tratamentos capilares. Atendimento personalizado em São Lourenço do Sul, RS.",
+    },
+    {
+      key: "site_keywords",
+      value:
+        "salão de beleza, mechas, coloração, penteados, maquiagem, corte de cabelo, tratamentos capilares, São Lourenço do Sul, RS",
+    },
+    { key: "og_image", value: "" },
   ]
 
   for (const s of settings) {

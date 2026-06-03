@@ -18,16 +18,15 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "Carolina Dotti — Beleza e Elegância",
-  description:
-    "Salão especializado em mechas, penteados, maquiagem, corte, coloração e tratamentos capilares. Espaço Carolina Dotti em São Lourenço do Sul, RS.",
-  openGraph: {
-    title: "Carolina Dotti — Beleza e Elegância",
-    description:
-      "Salão especializado em mechas, penteados, maquiagem, corte, coloração e tratamentos capilares.",
-    locale: "pt_BR",
-    type: "website",
+  title: {
+    default: "Carolina Dotti — Beleza e Elegância",
+    template: "%s | Espaço Carolina Dotti",
   },
+  description:
+    "Espaço de beleza especializado em mechas, coloração, penteados, maquiagem, corte e tratamentos capilares. Atendimento personalizado em São Lourenço do Sul, RS.",
+  authors: [{ name: "Carolina Dotti" }],
+  creator: "Carolina Dotti",
+  publisher: "Espaço Carolina Dotti",
 }
 
 export default function RootLayout({

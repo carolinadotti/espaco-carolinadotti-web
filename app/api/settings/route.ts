@@ -9,6 +9,10 @@ const ALLOWED_KEYS = [
   "maps_url",
   "hero_image",
   "about_image",
+  "site_title",
+  "site_description",
+  "site_keywords",
+  "og_image",
 ]
 
 export async function GET() {
