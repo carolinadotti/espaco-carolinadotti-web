@@ -1,30 +1,30 @@
+import "dotenv/config"
 import { PrismaClient } from "@prisma/client"
+import { PrismaPg } from "@prisma/adapter-pg"
+import { Pool } from "pg"
 import bcrypt from "bcryptjs"
 
-const prisma = new PrismaClient()
+const pool = new Pool({
+  connectionString: process.env.DIRECT_URL ?? process.env.DATABASE_URL ?? "",
+})
+const adapter = new PrismaPg(pool)
+const prisma = new PrismaClient({ adapter })
 
 async function main() {
   console.log("🌱 Iniciando seed...")
 
-  // Usuários administradores
   const password = await bcrypt.hash("CarolinaDotti@2026!", 12)
 
   await prisma.user.upsert({
     where: { email: "fagnernlopes@gmail.com" },
     update: {},
-    create: {
-      email: "fagnernlopes@gmail.com",
-      password,
-    },
+    create: { email: "fagnernlopes@gmail.com", password },
   })
 
   await prisma.user.upsert({
     where: { email: "carolinadotti@outlook.com" },
     update: {},
-    create: {
-      email: "carolinadotti@outlook.com",
-      password,
-    },
+    create: { email: "carolinadotti@outlook.com", password },
   })
 
   console.log("✅ Usuários criados:")
@@ -32,14 +32,12 @@ async function main() {
   console.log("   carolinadotti@outlook.com")
   console.log("   Senha inicial: CarolinaDotti@2026!")
 
-  // Settings padrão
   const settings = [
     { key: "instagram", value: "carolsdotti" },
-    { key: "whatsapp", value: "+5553810391 03" },
+    { key: "whatsapp", value: "+55 53 8103-9103" },
     {
       key: "address",
-      value:
-        "Avenida Marechal Floriano, 214, Barrinha, São Lourenço do Sul, RS",
+      value: "Avenida Marechal Floriano, 214, Barrinha, São Lourenço do Sul, RS",
     },
     {
       key: "maps_url",
@@ -67,4 +65,7 @@ main()
     console.error(e)
     process.exit(1)
   })
-  .finally(() => prisma.$disconnect())
+  .finally(async () => {
+    await prisma.$disconnect()
+    await pool.end()
+  })
