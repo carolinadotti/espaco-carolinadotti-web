@@ -11,6 +11,7 @@ import {
   ExternalLink,
   Sparkles,
   BookOpen,
+  User,
 } from "lucide-react"
 import {
   Sidebar,
@@ -30,6 +31,11 @@ const navItems = [
     href: "/dashboard",
     label: "Dashboard",
     icon: LayoutDashboard,
+  },
+  {
+    href: "/dashboard/about",
+    label: "Sobre",
+    icon: User,
   },
   {
     href: "/dashboard/services",

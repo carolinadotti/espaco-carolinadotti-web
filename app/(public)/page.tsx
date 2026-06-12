@@ -131,7 +131,11 @@ export default async function HomePage() {
       <LocalBusinessJsonLd settings={settings} />
       <main>
         <Hero imageUrl={settings.hero_image || undefined} />
-        <Sobre imageUrl={settings.about_image || undefined} />
+        <Sobre
+          imageUrl={settings.about_image || undefined}
+          title={settings.about_title || undefined}
+          text={settings.about_text || undefined}
+        />
         <Servicos />
         <Contato
           instagram={settings.instagram}

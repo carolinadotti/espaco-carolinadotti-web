@@ -109,11 +109,12 @@ export default function SettingsPage() {
             <CardTitle className="text-base">Imagens</CardTitle>
           </div>
           <CardDescription>
-            Faça upload e recorte das imagens principais do site. As imagens
-            são otimizadas automaticamente para WebP.
+            Faça upload e recorte da imagem principal do site. A imagem é
+            otimizada automaticamente para WebP. A imagem da seção &ldquo;Sobre&rdquo;
+            é gerenciada na página dedicada.
           </CardDescription>
         </CardHeader>
-        <CardContent className="grid gap-8 sm:grid-cols-2">
+        <CardContent className="max-w-md">
           <ImageUpload
             type="hero"
             label="Imagem Hero (Tela Inicial)"
@@ -121,15 +122,6 @@ export default function SettingsPage() {
             aspect={16 / 9}
             onSuccess={(url) =>
               setSettings((prev) => ({ ...prev, hero_image: url }))
-            }
-          />
-          <ImageUpload
-            type="about"
-            label='Imagem "Sobre"'
-            currentUrl={settings.about_image || undefined}
-            aspect={3 / 4}
-            onSuccess={(url) =>
-              setSettings((prev) => ({ ...prev, about_image: url }))
             }
           />
         </CardContent>

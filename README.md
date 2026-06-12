@@ -66,7 +66,8 @@ O site estará disponível em `http://localhost:3000`.
 | `/` | Landing page pública |
 | `/login` | Login admin |
 | `/dashboard` | Painel com métricas e gráficos |
-| `/dashboard/settings` | Configurações (imagens + contato) |
+| `/dashboard/about` | Edição da seção Sobre (título, texto e imagem) |
+| `/dashboard/settings` | Configurações (imagem hero + contato + SEO) |
 
 ## Imagens
 

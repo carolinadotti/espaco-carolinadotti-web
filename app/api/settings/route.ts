@@ -9,6 +9,8 @@ const ALLOWED_KEYS = [
   "maps_url",
   "hero_image",
   "about_image",
+  "about_title",
+  "about_text",
   "site_title",
   "site_description",
   "site_keywords",

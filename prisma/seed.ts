@@ -104,6 +104,12 @@ async function main() {
     },
     { key: "hero_image", value: "" },
     { key: "about_image", value: "" },
+    { key: "about_title", value: "Um olhar que\nrevela beleza" },
+    {
+      key: "about_text",
+      value:
+        "Cada pessoa carrega consigo uma beleza singular, muitas vezes adormecida sob a rotina do cotidiano. Meu trabalho é criar um espaço onde essa beleza possa respirar e se revelar naturalmente.\n\nCom anos de dedicação e uma busca constante pela excelência, desenvolvi uma abordagem que valoriza a individualidade de cada cliente. Não transformo — revelo. Não imponho — escuto. O resultado é uma versão sua que você reconhece como a mais autêntica.",
+    },
     { key: "site_title", value: "Carolina Dotti — Beleza e Elegância" },
     {
       key: "site_description",
