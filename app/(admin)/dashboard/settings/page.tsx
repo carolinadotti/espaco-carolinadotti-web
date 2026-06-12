@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Save, Loader2, AtSign, Phone, MapPin, Image, Search } from "lucide-react"
+import { Save, Loader2, AtSign, Phone, MapPin, Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -15,15 +15,12 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { toast } from "sonner"
-import ImageUpload from "@/components/admin/ImageUpload"
 
 interface Settings {
   instagram: string
   whatsapp: string
   address: string
   maps_url: string
-  hero_image: string
-  about_image: string
   site_title: string
   site_description: string
   site_keywords: string
@@ -36,8 +33,6 @@ export default function SettingsPage() {
     whatsapp: "",
     address: "",
     maps_url: "",
-    hero_image: "",
-    about_image: "",
     site_title: "",
     site_description: "",
     site_keywords: "",
@@ -100,32 +95,6 @@ export default function SettingsPage() {
           Gerencie as informações exibidas no site.
         </p>
       </div>
-
-      {/* Imagens */}
-      <Card>
-        <CardHeader>
-          <div className="flex items-center gap-2">
-            <Image className="w-4 h-4 text-muted-foreground" />
-            <CardTitle className="text-base">Imagens</CardTitle>
-          </div>
-          <CardDescription>
-            Faça upload e recorte da imagem principal do site. A imagem é
-            otimizada automaticamente para WebP. A imagem da seção &ldquo;Sobre&rdquo;
-            é gerenciada na página dedicada.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="max-w-md">
-          <ImageUpload
-            type="hero"
-            label="Imagem Hero (Tela Inicial)"
-            currentUrl={settings.hero_image || undefined}
-            aspect={16 / 9}
-            onSuccess={(url) =>
-              setSettings((prev) => ({ ...prev, hero_image: url }))
-            }
-          />
-        </CardContent>
-      </Card>
 
       {/* Contato */}
       <Card>

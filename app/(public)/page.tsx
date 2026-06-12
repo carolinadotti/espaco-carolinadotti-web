@@ -130,7 +130,12 @@ export default async function HomePage() {
     <>
       <LocalBusinessJsonLd settings={settings} />
       <main>
-        <Hero imageUrl={settings.hero_image || undefined} />
+        <Hero
+          imageUrl={settings.hero_image || undefined}
+          imageUrlMobile={settings.hero_image_mobile || undefined}
+          title={settings.hero_title || undefined}
+          subtitle={settings.hero_subtitle || undefined}
+        />
         <Sobre
           imageUrl={settings.about_image || undefined}
           title={settings.about_title || undefined}

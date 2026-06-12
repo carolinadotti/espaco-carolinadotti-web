@@ -22,7 +22,7 @@ interface Area {
 }
 
 interface ImageUploadProps {
-  type: "hero" | "about"
+  type: "hero" | "hero_mobile" | "about"
   label: string
   currentUrl?: string
   aspect: number

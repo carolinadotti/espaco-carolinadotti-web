@@ -103,6 +103,12 @@ async function main() {
         "https://www.google.com/maps/search/?api=1&query=Avenida+Marechal+Floriano+214+Barrinha+S%C3%A3o+Louren%C3%A7o+do+Sul+RS",
     },
     { key: "hero_image", value: "" },
+    { key: "hero_image_mobile", value: "" },
+    { key: "hero_title", value: "Carolina\nDotti" },
+    {
+      key: "hero_subtitle",
+      value: "A beleza que já existe em você, revelada com elegância",
+    },
     { key: "about_image", value: "" },
     { key: "about_title", value: "Um olhar que\nrevela beleza" },
     {

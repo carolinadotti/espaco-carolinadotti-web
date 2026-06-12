@@ -7,8 +7,9 @@ import path from "path"
 import fs from "fs/promises"
 
 const STATIC_SPECS = {
-  hero:  { width: 1920, height: 1080, settingKey: "hero_image" },
-  about: { width: 800,  height: 1067, settingKey: "about_image" },
+  hero:        { width: 2560, height: 1440, settingKey: "hero_image" },
+  hero_mobile: { width: 1290, height: 2294, settingKey: "hero_image_mobile" },
+  about:       { width: 800,  height: 1067, settingKey: "about_image" },
 } as const
 
 type StaticType = keyof typeof STATIC_SPECS

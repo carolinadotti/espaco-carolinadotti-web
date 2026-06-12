@@ -6,6 +6,9 @@ export interface SiteSettings {
   address: string
   maps_url: string
   hero_image: string
+  hero_image_mobile: string
+  hero_title: string
+  hero_subtitle: string
   about_image: string
   about_title: string
   about_text: string
@@ -24,6 +27,9 @@ const DEFAULTS: SiteSettings = {
   maps_url:
     "https://www.google.com/maps/search/?api=1&query=Avenida+Marechal+Floriano+214+Barrinha+S%C3%A3o+Louren%C3%A7o+do+Sul+RS",
   hero_image: "",
+  hero_image_mobile: "",
+  hero_title: "Carolina\nDotti",
+  hero_subtitle: "A beleza que já existe em você, revelada com elegância",
   about_image: "",
   about_title: "Um olhar que\nrevela beleza",
   about_text:
