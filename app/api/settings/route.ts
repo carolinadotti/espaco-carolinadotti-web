@@ -14,6 +14,8 @@ const ALLOWED_KEYS = [
   "about_image",
   "about_title",
   "about_text",
+  "gallery_title",
+  "gallery_description",
   "site_title",
   "site_description",
   "site_keywords",

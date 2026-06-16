@@ -13,6 +13,7 @@ import {
   BookOpen,
   User,
   Monitor,
+  Images,
 } from "lucide-react"
 import {
   Sidebar,
@@ -42,6 +43,11 @@ const navItems = [
     href: "/dashboard/about",
     label: "Sobre",
     icon: User,
+  },
+  {
+    href: "/dashboard/gallery",
+    label: "Espaço",
+    icon: Images,
   },
   {
     href: "/dashboard/services",

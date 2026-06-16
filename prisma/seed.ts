@@ -4,8 +4,20 @@ import { PrismaPg } from "@prisma/adapter-pg"
 import { Pool } from "pg"
 import bcrypt from "bcryptjs"
 
+// Torna 'verify-full' explícito: o pg/pg-connection-string v3 deixará de tratar
+// 'require'/'prefer'/'verify-ca' como aliases de 'verify-full'. Mantém a mesma
+// segurança/comportamento atual e silencia o aviso de depreciação.
+function normalizeSslMode(connectionString: string): string {
+  return connectionString.replace(
+    /sslmode=(require|prefer|verify-ca)\b/gi,
+    "sslmode=verify-full"
+  )
+}
+
 const pool = new Pool({
-  connectionString: process.env.DIRECT_URL ?? process.env.DATABASE_URL ?? "",
+  connectionString: normalizeSslMode(
+    process.env.DIRECT_URL ?? process.env.DATABASE_URL ?? ""
+  ),
 })
 const adapter = new PrismaPg(pool)
 const prisma = new PrismaClient({ adapter })
@@ -116,6 +128,8 @@ async function main() {
       value:
         "Cada pessoa carrega consigo uma beleza singular, muitas vezes adormecida sob a rotina do cotidiano. Meu trabalho é criar um espaço onde essa beleza possa respirar e se revelar naturalmente.\n\nCom anos de dedicação e uma busca constante pela excelência, desenvolvi uma abordagem que valoriza a individualidade de cada cliente. Não transformo — revelo. Não imponho — escuto. O resultado é uma versão sua que você reconhece como a mais autêntica.",
     },
+    { key: "gallery_title", value: "" },
+    { key: "gallery_description", value: "" },
     { key: "site_title", value: "Carolina Dotti — Beleza e Elegância" },
     {
       key: "site_description",

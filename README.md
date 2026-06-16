@@ -27,7 +27,7 @@ cp .env.local .env.local
 
 | Variável | Descrição |
 |---|---|
-| `DATABASE_URL` | String de conexão NeonDB (ex: `postgresql://...@ep-xxx.neon.tech/...?sslmode=require`) |
+| `DATABASE_URL` | String de conexão NeonDB (ex: `postgresql://...@ep-xxx.neon.tech/...?sslmode=verify-full`) |
 | `DIRECT_URL` | Mesma URL sem pooling (para migrações) |
 | `AUTH_SECRET` | Gere com: `openssl rand -base64 32` |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Site Key do Cloudflare Turnstile |
@@ -68,6 +68,7 @@ O site estará disponível em `http://localhost:3000`.
 | `/dashboard` | Painel com métricas e gráficos |
 | `/dashboard/hero` | Edição da seção Hero (título, subtítulo e imagens desktop/mobile) |
 | `/dashboard/about` | Edição da seção Sobre (título, texto e imagem) |
+| `/dashboard/gallery` | Edição da seção Espaço (galeria de fotos: título, descrição e fotos) |
 | `/dashboard/settings` | Configurações (contato + SEO) |
 
 ## Imagens

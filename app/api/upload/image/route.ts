@@ -50,6 +50,25 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: true, url: imageUrl })
     }
 
+    // ── Imagem da galeria: type = "gallery-{id}" ──────────────────
+    if (type.startsWith("gallery-")) {
+      const photoId = type.replace("gallery-", "")
+
+      const processed = await sharp(buffer)
+        .resize(1200, 1200, { fit: "cover", position: "centre" }) // 1:1
+        .webp({ quality: 85 })
+        .toBuffer()
+
+      const imageUrl = await saveFile(processed, `gallery-${photoId}-${Date.now()}.webp`)
+
+      await prisma.galleryPhoto.update({
+        where: { id: photoId },
+        data: { imageUrl },
+      })
+
+      return NextResponse.json({ ok: true, url: imageUrl })
+    }
+
     // ── Hero / About ──────────────────────────────────────────────
     if (!(type in STATIC_SPECS)) {
       return NextResponse.json({ error: "Tipo inválido" }, { status: 400 })

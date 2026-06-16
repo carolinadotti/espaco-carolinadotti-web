@@ -5,6 +5,7 @@ import { getSettings } from "@/lib/settings"
 import Hero from "@/components/public/Hero"
 import Sobre from "@/components/public/Sobre"
 import Servicos from "@/components/public/Servicos"
+import Espaco from "@/components/public/Espaco"
 import Contato from "@/components/public/Contato"
 import { UAParser } from "ua-parser-js"
 
@@ -142,6 +143,7 @@ export default async function HomePage() {
           text={settings.about_text || undefined}
         />
         <Servicos />
+        <Espaco />
         <Contato
           instagram={settings.instagram}
           whatsapp={settings.whatsapp}
