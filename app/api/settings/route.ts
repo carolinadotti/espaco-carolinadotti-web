@@ -16,6 +16,8 @@ const ALLOWED_KEYS = [
   "about_text",
   "gallery_title",
   "gallery_description",
+  "clients_title",
+  "clients_description",
   "contact_title",
   "contact_description",
   "contact_cta_label",

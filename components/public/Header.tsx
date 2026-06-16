@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react"
 const ANCHOR_LINKS = [
   { href: "#inicio", label: "Início" },
   { href: "#sobre", label: "Sobre" },
+  { href: "#clientes", label: "Clientes" },
   { href: "#servicos", label: "Serviços" },
   { href: "#espaco", label: "Espaço" },
   { href: "#contato", label: "Contato" },

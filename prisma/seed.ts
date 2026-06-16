@@ -130,6 +130,12 @@ async function main() {
     },
     { key: "gallery_title", value: "" },
     { key: "gallery_description", value: "" },
+    { key: "clients_title", value: "Resultados que\nfalam por si" },
+    {
+      key: "clients_description",
+      value:
+        "Cada cliente, uma transformação única. Veja de perto alguns dos nossos trabalhos.",
+    },
     { key: "contact_title", value: "Agende seu\nhorário" },
     {
       key: "contact_description",

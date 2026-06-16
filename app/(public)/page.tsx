@@ -4,6 +4,7 @@ import { prisma } from "@/lib/db"
 import { getSettings } from "@/lib/settings"
 import Hero from "@/components/public/Hero"
 import Sobre from "@/components/public/Sobre"
+import Clientes from "@/components/public/Clientes"
 import Servicos from "@/components/public/Servicos"
 import Espaco from "@/components/public/Espaco"
 import Contato from "@/components/public/Contato"
@@ -142,6 +143,7 @@ export default async function HomePage() {
           title={settings.about_title || undefined}
           text={settings.about_text || undefined}
         />
+        <Clientes />
         <Servicos />
         <Espaco />
         <Contato

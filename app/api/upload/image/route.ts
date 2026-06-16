@@ -69,6 +69,25 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: true, url: imageUrl })
     }
 
+    // ── Foto de cliente: type = "client-{id}" ─────────────────────
+    if (type.startsWith("client-")) {
+      const photoId = type.replace("client-", "")
+
+      const processed = await sharp(buffer)
+        .resize(1000, 1250, { fit: "cover", position: "centre" }) // 4:5
+        .webp({ quality: 85 })
+        .toBuffer()
+
+      const imageUrl = await saveFile(processed, `client-${photoId}-${Date.now()}.webp`)
+
+      await prisma.clientPhoto.update({
+        where: { id: photoId },
+        data: { imageUrl },
+      })
+
+      return NextResponse.json({ ok: true, url: imageUrl })
+    }
+
     // ── Hero / About ──────────────────────────────────────────────
     if (!(type in STATIC_SPECS)) {
       return NextResponse.json({ error: "Tipo inválido" }, { status: 400 })

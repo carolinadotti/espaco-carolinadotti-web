@@ -14,6 +14,8 @@ export interface SiteSettings {
   about_text: string
   gallery_title: string
   gallery_description: string
+  clients_title: string
+  clients_description: string
   contact_title: string
   contact_description: string
   contact_cta_label: string
@@ -41,6 +43,9 @@ const DEFAULTS: SiteSettings = {
     "Cada pessoa carrega consigo uma beleza singular, muitas vezes adormecida sob a rotina do cotidiano. Meu trabalho é criar um espaço onde essa beleza possa respirar e se revelar naturalmente.\n\nCom anos de dedicação e uma busca constante pela excelência, desenvolvi uma abordagem que valoriza a individualidade de cada cliente. Não transformo — revelo. Não imponho — escuto. O resultado é uma versão sua que você reconhece como a mais autêntica.",
   gallery_title: "",
   gallery_description: "",
+  clients_title: "Resultados que\nfalam por si",
+  clients_description:
+    "Cada cliente, uma transformação única. Veja de perto alguns dos nossos trabalhos.",
   contact_title: "Agende seu\nhorário",
   contact_description:
     "Cada atendimento é uma experiência única e exclusiva. Entre em contato para encontrarmos o melhor horário para você.",
