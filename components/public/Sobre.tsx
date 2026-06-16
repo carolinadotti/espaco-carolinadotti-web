@@ -17,7 +17,7 @@ export default function Sobre({ imageUrl, title, text }: SobreProps) {
   const paragraphs = body.split(/\n{2,}/).filter((p) => p.trim().length > 0)
 
   return (
-    <section id="sobre" className="py-28 md:py-36 bg-[hsl(30_33%_96%)]">
+    <section id="sobre" className="py-28 md:py-36 bg-secondary">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid md:grid-cols-12 gap-12 md:gap-0 items-center">
           {/* Image */}
