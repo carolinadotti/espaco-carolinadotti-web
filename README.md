@@ -69,7 +69,8 @@ O site estará disponível em `http://localhost:3000`.
 | `/dashboard/hero` | Edição da seção Hero (título, subtítulo e imagens desktop/mobile) |
 | `/dashboard/about` | Edição da seção Sobre (título, texto e imagem) |
 | `/dashboard/gallery` | Edição da seção Espaço (galeria de fotos: título, descrição e fotos) |
-| `/dashboard/settings` | Configurações (contato + SEO) |
+| `/dashboard/contact` | Edição da seção Contato (título, descrição, CTA e informações de contato) |
+| `/dashboard/settings` | Configurações (somente SEO + metatags) |
 
 ## Imagens
 

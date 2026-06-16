@@ -14,6 +14,7 @@ import {
   User,
   Monitor,
   Images,
+  Phone,
 } from "lucide-react"
 import {
   Sidebar,
@@ -53,6 +54,11 @@ const navItems = [
     href: "/dashboard/services",
     label: "Serviços",
     icon: Sparkles,
+  },
+  {
+    href: "/dashboard/contact",
+    label: "Contato",
+    icon: Phone,
   },
   {
     href: "/dashboard/blog",

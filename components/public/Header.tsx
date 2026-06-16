@@ -9,6 +9,7 @@ const ANCHOR_LINKS = [
   { href: "#inicio", label: "Início" },
   { href: "#sobre", label: "Sobre" },
   { href: "#servicos", label: "Serviços" },
+  { href: "#espaco", label: "Espaço" },
   { href: "#contato", label: "Contato" },
 ]
 

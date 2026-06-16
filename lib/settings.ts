@@ -14,6 +14,9 @@ export interface SiteSettings {
   about_text: string
   gallery_title: string
   gallery_description: string
+  contact_title: string
+  contact_description: string
+  contact_cta_label: string
   // SEO
   site_title: string
   site_description: string
@@ -38,6 +41,10 @@ const DEFAULTS: SiteSettings = {
     "Cada pessoa carrega consigo uma beleza singular, muitas vezes adormecida sob a rotina do cotidiano. Meu trabalho é criar um espaço onde essa beleza possa respirar e se revelar naturalmente.\n\nCom anos de dedicação e uma busca constante pela excelência, desenvolvi uma abordagem que valoriza a individualidade de cada cliente. Não transformo — revelo. Não imponho — escuto. O resultado é uma versão sua que você reconhece como a mais autêntica.",
   gallery_title: "",
   gallery_description: "",
+  contact_title: "Agende seu\nhorário",
+  contact_description:
+    "Cada atendimento é uma experiência única e exclusiva. Entre em contato para encontrarmos o melhor horário para você.",
+  contact_cta_label: "Agendar via WhatsApp",
   site_title: "Carolina Dotti — Beleza e Elegância",
   site_description:
     "Espaço de beleza especializado em mechas, coloração, penteados, maquiagem, corte e tratamentos capilares. Atendimento personalizado em São Lourenço do Sul, RS.",

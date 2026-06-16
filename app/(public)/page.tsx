@@ -149,6 +149,9 @@ export default async function HomePage() {
           whatsapp={settings.whatsapp}
           address={settings.address}
           mapsUrl={settings.maps_url}
+          title={settings.contact_title || undefined}
+          description={settings.contact_description || undefined}
+          ctaLabel={settings.contact_cta_label || undefined}
         />
       </main>
     </>

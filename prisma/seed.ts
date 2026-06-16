@@ -130,6 +130,13 @@ async function main() {
     },
     { key: "gallery_title", value: "" },
     { key: "gallery_description", value: "" },
+    { key: "contact_title", value: "Agende seu\nhorário" },
+    {
+      key: "contact_description",
+      value:
+        "Cada atendimento é uma experiência única e exclusiva. Entre em contato para encontrarmos o melhor horário para você.",
+    },
+    { key: "contact_cta_label", value: "Agendar via WhatsApp" },
     { key: "site_title", value: "Carolina Dotti — Beleza e Elegância" },
     {
       key: "site_description",

@@ -1,11 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Save, Loader2, AtSign, Phone, MapPin, Search } from "lucide-react"
+import { Save, Loader2, Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Separator } from "@/components/ui/separator"
 import { Textarea } from "@/components/ui/textarea"
 import {
   Card,
@@ -17,10 +16,6 @@ import {
 import { toast } from "sonner"
 
 interface Settings {
-  instagram: string
-  whatsapp: string
-  address: string
-  maps_url: string
   site_title: string
   site_description: string
   site_keywords: string
@@ -29,10 +24,6 @@ interface Settings {
 
 export default function SettingsPage() {
   const [settings, setSettings] = useState<Settings>({
-    instagram: "",
-    whatsapp: "",
-    address: "",
-    maps_url: "",
     site_title: "",
     site_description: "",
     site_keywords: "",
@@ -61,10 +52,6 @@ export default function SettingsPage() {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          instagram: settings.instagram,
-          whatsapp: settings.whatsapp,
-          address: settings.address,
-          maps_url: settings.maps_url,
           site_title: settings.site_title,
           site_description: settings.site_description,
           site_keywords: settings.site_keywords,
@@ -92,123 +79,9 @@ export default function SettingsPage() {
       <div>
         <h2 className="text-2xl font-bold tracking-tight">Configurações</h2>
         <p className="text-muted-foreground text-sm mt-1">
-          Gerencie as informações exibidas no site.
+          Gerencie o SEO e as metatags do site.
         </p>
       </div>
-
-      {/* Contato */}
-      <Card>
-        <CardHeader>
-          <div className="flex items-center gap-2">
-            <Phone className="w-4 h-4 text-muted-foreground" />
-            <CardTitle className="text-base">Informações de Contato</CardTitle>
-          </div>
-          <CardDescription>
-            Essas informações são exibidas na seção de contato do site.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-5">
-          <div className="space-y-2">
-            <Label htmlFor="instagram" className="flex items-center gap-2">
-              <AtSign className="w-3.5 h-3.5" />
-              Instagram
-            </Label>
-            <div className="flex">
-              <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-input bg-muted text-muted-foreground text-sm">
-                @
-              </span>
-              <Input
-                id="instagram"
-                value={settings.instagram}
-                onChange={(e) =>
-                  setSettings((prev) => ({
-                    ...prev,
-                    instagram: e.target.value,
-                  }))
-                }
-                className="rounded-l-none"
-                placeholder="carolsdotti"
-              />
-            </div>
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="whatsapp" className="flex items-center gap-2">
-              <Phone className="w-3.5 h-3.5" />
-              WhatsApp
-            </Label>
-            <Input
-              id="whatsapp"
-              value={settings.whatsapp}
-              onChange={(e) =>
-                setSettings((prev) => ({
-                  ...prev,
-                  whatsapp: e.target.value,
-                }))
-              }
-              placeholder="+55 53 8103-9103"
-            />
-            <p className="text-xs text-muted-foreground">
-              Somente dígitos serão usados para o link wa.me (ex: +55 53
-              91234-5678)
-            </p>
-          </div>
-
-          <Separator />
-
-          <div className="space-y-2">
-            <Label htmlFor="address" className="flex items-center gap-2">
-              <MapPin className="w-3.5 h-3.5" />
-              Endereço
-            </Label>
-            <Input
-              id="address"
-              value={settings.address}
-              onChange={(e) =>
-                setSettings((prev) => ({
-                  ...prev,
-                  address: e.target.value,
-                }))
-              }
-              placeholder="Av. Marechal Floriano, 214, Barrinha..."
-            />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="maps_url">Link Google Maps</Label>
-            <Input
-              id="maps_url"
-              value={settings.maps_url}
-              onChange={(e) =>
-                setSettings((prev) => ({
-                  ...prev,
-                  maps_url: e.target.value,
-                }))
-              }
-              placeholder="https://maps.google.com/..."
-            />
-            <p className="text-xs text-muted-foreground">
-              URL completa do Google Maps para o endereço.
-            </p>
-          </div>
-
-          <div className="pt-2">
-            <Button onClick={handleSave} disabled={saving} className="gap-2">
-              {saving ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  Salvando…
-                </>
-              ) : (
-                <>
-                  <Save className="w-4 h-4" />
-                  Salvar Configurações
-                </>
-              )}
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
 
       {/* SEO */}
       <Card>

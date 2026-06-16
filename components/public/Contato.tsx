@@ -7,16 +7,30 @@ interface ContatoProps {
   whatsapp: string
   address: string
   mapsUrl: string
+  title?: string
+  description?: string
+  ctaLabel?: string
 }
+
+const DEFAULT_TITLE = "Agende seu\nhorário"
+const DEFAULT_DESCRIPTION =
+  "Cada atendimento é uma experiência única e exclusiva. Entre em contato para encontrarmos o melhor horário para você."
+const DEFAULT_CTA_LABEL = "Agendar via WhatsApp"
 
 export default function Contato({
   instagram,
   whatsapp,
   address,
   mapsUrl,
+  title,
+  description,
+  ctaLabel,
 }: ContatoProps) {
   const waNumber = whatsapp.replace(/\D/g, "")
   const waLink = `https://wa.me/${waNumber}`
+  const heading = title?.trim() || DEFAULT_TITLE
+  const body = description?.trim() || DEFAULT_DESCRIPTION
+  const buttonLabel = ctaLabel?.trim() || DEFAULT_CTA_LABEL
 
   const handleWhatsappClick = async () => {
     try {
@@ -39,13 +53,12 @@ export default function Contato({
             <p className="font-body text-xs tracking-[0.3em] uppercase text-[hsl(20_6%_40%)] mb-6">
               Contato
             </p>
-            <h2 className="font-display font-light text-4xl md:text-5xl text-[hsl(20_6%_18%)] mb-8 leading-tight">
-              Agende seu<br />horário
+            <h2 className="font-display font-light text-4xl md:text-5xl text-[hsl(20_6%_18%)] mb-8 leading-tight whitespace-pre-line">
+              {heading}
             </h2>
             <div className="w-12 h-px bg-[hsl(30_35%_54%)] mb-8" />
             <p className="font-body font-light text-[hsl(20_6%_40%)] leading-relaxed mb-12">
-              Cada atendimento é uma experiência única e exclusiva. Entre em
-              contato para encontrarmos o melhor horário para você.
+              {body}
             </p>
 
             <button
@@ -53,7 +66,7 @@ export default function Contato({
               className="flex items-center gap-3 font-body text-xs tracking-[0.2em] uppercase px-8 py-4 bg-[hsl(30_35%_54%)] text-[hsl(30_33%_96%)] hover:bg-[hsl(30_35%_46%)] transition-all duration-300 w-full justify-center md:w-auto"
             >
               <MessageCircle size={16} />
-              Agendar via WhatsApp
+              {buttonLabel}
             </button>
           </div>
 
