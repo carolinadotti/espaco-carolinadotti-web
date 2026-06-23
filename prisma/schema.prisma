@@ -94,3 +94,16 @@ model ClientPhoto {
 
   @@index([order])
 }
+
+model BioLink {
+  id        String   @id @default(cuid())
+  order     Int      @default(0)
+  label     String
+  url       String
+  icon      String   @default("")
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([order])
+}

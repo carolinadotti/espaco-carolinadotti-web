@@ -24,6 +24,8 @@ export interface SiteSettings {
   site_description: string
   site_keywords: string
   og_image: string
+  bio_avatar: string
+  bio_title: string
 }
 
 const DEFAULTS: SiteSettings = {
@@ -56,6 +58,8 @@ const DEFAULTS: SiteSettings = {
   site_keywords:
     "salão de beleza, mechas, coloração, penteados, maquiagem, corte de cabelo, tratamentos capilares, São Lourenço do Sul, RS",
   og_image: "",
+  bio_avatar: "",
+  bio_title: "Carolina Dotti",
 }
 
 export async function getSettings(): Promise<SiteSettings> {

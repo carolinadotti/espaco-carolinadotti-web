@@ -25,6 +25,8 @@ const ALLOWED_KEYS = [
   "site_description",
   "site_keywords",
   "og_image",
+  "bio_avatar",
+  "bio_title",
 ]
 
 export async function GET() {

@@ -22,7 +22,7 @@ interface Area {
 }
 
 interface ImageUploadProps {
-  type: "hero" | "hero_mobile" | "about"
+  type: "hero" | "hero_mobile" | "about" | "bio"
   label: string
   currentUrl?: string
   aspect: number
@@ -135,7 +135,10 @@ export default function ImageUpload({
       {/* Preview */}
       <div
         className="relative border-2 border-dashed border-border rounded-lg overflow-hidden bg-muted/30"
-        style={{ aspectRatio: aspect > 1 ? "16/9" : "3/4", maxHeight: 240 }}
+        style={{
+          aspectRatio: aspect === 1 ? "1/1" : aspect > 1 ? "16/9" : "3/4",
+          maxHeight: aspect === 1 ? 200 : 240,
+        }}
       >
         {currentUrl ? (
           <Image

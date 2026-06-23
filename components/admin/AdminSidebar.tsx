@@ -16,6 +16,7 @@ import {
   Images,
   Phone,
   Users,
+  Link2,
 } from "lucide-react"
 import {
   Sidebar,
@@ -65,6 +66,11 @@ const navItems = [
     href: "/dashboard/contact",
     label: "Contato",
     icon: Phone,
+  },
+  {
+    href: "/dashboard/bio",
+    label: "Bio",
+    icon: Link2,
   },
   {
     href: "/dashboard/blog",
@@ -134,6 +140,14 @@ export default function AdminSidebar({ userEmail }: AdminSidebarProps) {
               >
                 <ExternalLink className="w-4 h-4" />
                 <span>Ver Site</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton
+                render={<a href="/bio" target="_blank" rel="noopener noreferrer" />}
+              >
+                <Link2 className="w-4 h-4" />
+                <span>Ver Bio</span>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>

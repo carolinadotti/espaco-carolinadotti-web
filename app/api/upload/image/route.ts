@@ -10,6 +10,7 @@ const STATIC_SPECS = {
   hero:        { width: 2560, height: 1440, settingKey: "hero_image" },
   hero_mobile: { width: 1290, height: 2294, settingKey: "hero_image_mobile" },
   about:       { width: 800,  height: 1067, settingKey: "about_image" },
+  bio:         { width: 400,  height: 400,  settingKey: "bio_avatar" },
 } as const
 
 type StaticType = keyof typeof STATIC_SPECS
